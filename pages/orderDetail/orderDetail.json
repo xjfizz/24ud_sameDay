@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "bottomTip": "../../components/bottom_no_message"
+  }
+}

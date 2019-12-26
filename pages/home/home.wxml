@@ -1,0 +1,207 @@
+<i-toast id="toast" />
+<i-message id="message" />
+<!--<image bindtap="startScanner" data-item="{{sannerState}}" class="img-sty" src="../../images/tabBar/scanning-group@2x.png"></image>-->
+
+<view class="main">
+    <view class="main_head">
+        <view class="main_banner">
+            <image class="main_banner_img" src="../../images/home/banner/homepage-bg@2x.png"></image>
+        </view>
+        <view class="income_today">
+            <view class="income_today_value">960.00</view>
+            <view class="income_today_label" bindtap="test">今日收入(元)</view>
+        </view>
+    </view>
+<view class="main_body">
+    <view class="tab_switch">
+        <view class="tab {{currentData == 0 ? 'tabSelected' : ''}}" data-current="0" bindtap="checkCurrent">待取件({{totalCount.waitPickCount}})</view>
+        <view class="tab {{currentData == 1 ? 'tabSelected' : ''}}" data-current="1" bindtap="checkCurrent">已取件({{totalCount.PickedCount}})</view>
+        <view class="tab {{currentData == 2 ? 'tabSelected' : ''}}" data-current="2" bindtap="checkCurrent">派件列表({{totalCount.sendCount}})</view>
+        <view class="tab {{currentData == 3 ? 'tabSelected' : ''}}" data-current="3" bindtap="checkCurrent">签收列表({{totalCount.waitPickCount}})</view>
+    </view>
+    <swiper current="{{currentData}}" class="switch" style="height: {{list.length * 450 }}rpx;min-height: 600rpx"  duration="300" bindchange="bindChange">
+        <!-- 待取件 -->
+        <swiper-item class="switch_item">
+            <view wx:if="{{waitPickList.length > 0}}" wx:for="{{waitPickList}}" wx:key="{{index}}">
+                <view  class="list_item" bindtap="goOrderDetail" data-item="{{item}}">
+                    <view class="list_item_main">
+                        <view class="list_item_main_head">
+                            <view class="list_item_time" >{{item.createTime}}</view>
+                            <block  wx:if="{{item.paymentType == 2}}"> <!-- 寄付: 2-->
+                                <view><image class="item_head_img" src="../../images/home/icon/jifu@2x.png"></image></view>
+                            </block>
+                            <block  wx:elif="{{item.paymentType == 1}}"><!-- 到付: 1-->
+                                <view><image class="item_head_img" src="../../images/home/icon/daofu@2x.png"></image></view>
+                            </block>
+                        </view>
+                        <view class="list_item_main_content">
+                            <view class="item_content_view"><image class="item_content_img" src="../../images/home/icon/wait/ji-icon@2x.png"></image></view>
+                            <view class="item_content_name">{{item.sender}}</view>
+                            <view class="item_content_phone">{{item.senderTel}}</view>
+                            <view class="item_content_label">
+                                <view  class="item_content_view" bindtap="pickGoods" data-order="{{item}}"><image class="item_content_label_img" src="../../images/home/icon/wait/shouye-qvjian@2x.png"></image></view>
+                            </view>
+                        </view>
+                        <view class="list_item_main_address">
+                            <view class="list_item_address_text">{{item.senderAddress}}</view>
+                        </view>
+                        <view class="list_item_main_bottom">
+                            <view class="bottom_left"  bindtap="playPhone" data-item="{{item}}">
+                              <image class="list_item_main_phone"  src="../../images/home/icon/dianhua@2x.png"></image>
+                               <view>联系电话</view>
+                            </view>
+                            <view class="bottom_left" catchtap="goTarget" data-order="{{item}}" >
+                                <image class="list_item_main_phone"  src="../../images/home/icon/daohang@2x.png"></image>
+                                <view>前往导航</view>
+                            </view>
+                        </view>
+
+
+                    </view>
+                </view>
+            </view>
+            <view  wx:if="{{waitPickList.length == 0}}">
+                <view class="no_message">暂无数据</view>
+            </view>
+
+        </swiper-item>
+        <!-- 已取件 -->
+        <swiper-item class="switch_item">
+            <block wx:if="{{PickedList.length > 0}}" wx:for="{{PickedList}}" wx:key="{{index}}">
+                <view  class="list_item">
+                    <view class="list_item_main">
+                        <view class="list_item_main_head">
+                            <view class="list_item_time" >{{item.createTime}}</view>
+                            <block  wx:if="{{item.paymentType == 2}}">
+                                <view><image class="item_head_img" src="../../images/home/icon/jifu@2x.png"></image></view>
+                            </block>
+                            <block  wx:elif="{{item.paymentType == 1}}">
+                                <view><image class="item_head_img" src="../../images/home/icon/daofu@2x.png"></image></view>
+                            </block>
+                        </view>
+                        <view class="list_item_main_content">
+                            <view class="item_content_view"><image class="item_content_img" src="../../images/home/icon/wait/ji-icon@2x.png"></image></view>
+                            <view class="item_content_name">{{item.sender}}</view>
+                            <view class="item_content_phone">{{item.senderTel}}</view>
+                            <view class="item_content_label">
+                                <view class="item_content_view"><image class="item_content_label_img" style="width:130rpx;height:50rpx" src="../../images/home/icon/received/daodazhandian@2x.png"></image></view>
+                            </view>
+                        </view>
+                        <view class="list_item_main_address">
+                            <view class="list_item_address_text">{{item.senderAddress}}</view>
+                        </view>
+                        <view class="list_item_main_bottom">
+                            <view class="bottom_left">
+                                <image class="list_item_main_phone"  src="../../images/home/icon/dianhua@2x.png"></image>
+                                <view>联系寄件人</view>
+                            </view>
+                            <view class="bottom_left">
+                                <image class="list_item_main_phone"  src="../../images/home/icon/daohang@2x.png"></image>
+                                <view>打印运单</view>
+                            </view>
+                        </view>
+
+
+                    </view>
+                </view>
+            </block>
+            <view  wx:if="{{PickedList.length == 0}}">
+                <view class="no_message">暂无数据</view>
+            </view>
+        </swiper-item>
+        <!-- 派件列表 -->
+        <swiper-item class="switch_item">
+            <block  wx:if="{{sendList.length > 0}}" wx:for="{{sendList}}" wx:key="{{index}}">
+                <view  class="list_item">
+                    <view class="list_item_main">
+                        <view class="list_item_main_head">
+                            <view class="list_item_time" >{{item.createTime}}</view>
+                            <block  wx:if="{{item.paymentType == 2}}">
+                                <view><image class="item_head_img" src="../../images/home/icon/jifu@2x.png"></image></view>
+                            </block>
+                            <block  wx:elif="{{item.paymentType == 1}}">
+                                <view><image class="item_head_img" src="../../images/home/icon/daofu@2x.png"></image></view>
+                            </block>
+                        </view>
+                        <view class="list_item_main_content">
+                            <view class="item_content_view"><image class="item_content_img" src="../../images/home/icon/send/shou@2x.png"></image></view>
+                            <view class="item_content_name">{{item.receiver}}</view>
+                            <view class="item_content_phone">{{item.receiverTel}}</view>
+                            <view class="item_content_label">
+                                <view class="item_content_view">
+                                    <image wx:if="{{item.paymentType == 2}}" bindtap="pickGoods" data-order="{{item}}" class="item_content_label_img" style="width:190rpx" src="../../images/home/icon/send/qianshou-button@2x.png"></image>
+                                    <image wx:elif="{{item.paymentType == 1}}" class="item_content_label_img" style="width:190rpx"  src="../../images/home/icon/send/shoukuanqianshou-button@2x.png"></image>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="list_item_main_address">
+                            <view class="list_item_address_text">{{item.receiverAddress}}</view>
+                        </view>
+                        <view class="list_item_main_bottom">
+                            <view class="bottom_left">
+                                <image class="list_item_main_phone"  src="../../images/home/icon/dianhua@2x.png"></image>
+                                <view>联系电话</view>
+                            </view>
+                            <view class="bottom_left">
+                                <image class="list_item_main_phone"  src="../../images/home/icon/daohang@2x.png"></image>
+                                <view>前往导航</view>
+                            </view>
+                        </view>
+
+
+                    </view>
+                </view>
+            </block>
+            <view  wx:if="{{sendList.length == 0}}">
+                <view class="no_message">暂无数据</view>
+            </view>
+        </swiper-item>
+        <!-- 签收列表 -->
+        <swiper-item class="switch_item">
+            <block wx:if="{{signedList.length > 0}}" wx:for="{{signedList}}" wx:key="{{index}}">
+                <view  class="list_item">
+                    <view class="list_item_main">
+                        <view class="list_item_main_head">
+                            <view class="list_item_time" >{{item.createTime}}</view>
+                            <view class="list_item_time_use">耗时: 1小时30分</view>
+                        </view>
+                        <view class="list_item_sign_content margin-top-sty50">
+                            <view>
+                                <image class="sign_content_img" src="../../images/home/icon/wait/ji-icon@2x.png"></image>
+                            </view>
+                            <view class="sign_content_text">
+                                <view class="sign_content_img_text">
+                                    <text>{{item.sender}}</text>
+                                    <text class="margin-left-sty40">{{item.senderTel}}</text>
+                                </view>
+                                <view class="sign_content_img_address">{{item.senderAddress}}</view>
+                            </view>
+                        </view>
+                        <view class="list_item_sign_money">
+                            <view>
+                                ￥{{item.charges.total || 0}}
+                            </view>
+                        </view>
+                        <view class="list_item_sign_content">
+                            <view>
+                                <image class="sign_content_img" src="../../images/home/icon/send/shou@2x.png"></image>
+                            </view>
+                            <view class="sign_content_text">
+                                <view class="sign_content_img_text">
+                                    <text>{{item.receiver}}</text>
+                                    <text class="margin-left-sty40">{{item.receiverTel}}</text>
+                                </view>
+                                <view class="sign_content_img_address">{{item.receiverAddress}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <view  wx:if="{{signedList.length == 0}}">
+                <view class="no_message">暂无数据</view>
+            </view>
+        </swiper-item>
+    </swiper>
+</view>
+
+</view>

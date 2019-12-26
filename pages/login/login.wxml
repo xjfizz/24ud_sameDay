@@ -1,0 +1,37 @@
+<view class="main">
+<i-message id="message" />
+    <view class="top">
+        
+            <!-- <image src="../../images/home/icon/homepage-bg@2x.png"></image> -->
+            <view class="top_bac_head"></view>
+            <image class="top_bac_img" src="../../images/login/denglu-bg@2x3.png"></image>
+       
+
+<!--        <view class="top_icon"></view>-->
+    </view>
+    <view class="middle">
+        <view class="login">
+            <view>
+                <view class="login_item">
+                    <image class="login_item_img" src='../../images/login/Accountnumber@2x.png'  mode="aspectFit"></image>
+                    <i-input maxlength="20" bind:change="usernameInput" autofocus placeholder="请输入用户名"></i-input>
+                </view>
+                <view class="login_item">
+                    <image class="login_item_img" src='../../images/login/Password@2x.png'  mode="aspectFit"></image>
+                    <i-input  focus="true" maxlength="20" bind:change="passwordInput" type="{{isShowPassword ? 'password' : 'text'}}" autofocus placeholder="请输入密码"></i-input>
+                    <image wx:if="{{isShowPassword}}" bindtap="showOrHide" class="password_hide_img" src='../../images/login/Hiddenpassword@2x.png'  mode="aspectFit"></image>
+                    <image wx:else="{{!isShowPassword}}" bindtap="showOrHide" class="password_hide_img" src='../../images/login/Displaypassword@2x.png'  mode="aspectFit"></image>
+                </view>
+                <view>
+                    <view class="forget_password" bindtap="forgetPawwword">忘记密码?</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="submit_button">
+        <view class="submit"  bindtap="loginSubmit">
+<!--            <image class="btnImg" src="../../images/login/Signin-button@2x.png"></image>-->
+            <view>登录</view>
+        </view>
+    </view>
+</view>

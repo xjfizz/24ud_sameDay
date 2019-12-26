@@ -1,0 +1,70 @@
+/* pages/login/login.wxss */
+.login{
+  padding: 10rpx 110rpx 50rpx 110rpx ;
+}
+.login_item{
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+    border-bottom: #cecece 1px solid;
+    width:100% ;
+}
+.login_item_img{
+    width: 40rpx;
+    height: 40rpx;
+}
+.password_hide_img{
+    width: 80rpx;
+    height: 80rpx;
+    margin-left: auto
+}
+.forget_password{
+    margin-top: 20rpx;
+    text-align: right;
+    color: #10aeff;
+    font-size: 12px;
+    margin-left: auto
+}
+.submit_button{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.submit{
+    width: 70vw;
+    height: 6vh;
+    margin-top: 20rpx;
+    background-color: #8d70fc;
+    color: white;
+    border-radius: 98rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn1::after {
+    border-radius: 98rpx;
+    border: 0;
+}
+.top{
+    width: 100vw;
+    height: 50vh;
+    background-color: #8d70fc;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.top image{
+     width: 100vw;
+     height:150rpx; 
+     position: absolute;
+     bottom: 0;
+  
+}
+.top_bac_head{
+  background: #ffffff;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 40rpx;
+  margin-top: 150rpx
+}

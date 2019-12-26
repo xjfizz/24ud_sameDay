@@ -1,0 +1,91 @@
+/* pages/sign/sign.wxss */
+.main{
+    background-color: #f3f2fa;
+}
+.header{
+    padding: 30rpx 10rpx 30rpx 60rpx;
+    /*margin: 20rpx;*/
+    background-color: #ffffff;
+    display: flex;
+}
+.header_item{
+    display: flex;
+}
+.header_item_title{
+    font-size: 14px;
+    font-weight: 700;
+    width: 20vw;
+    color: #3c3c3c;
+}
+.header_item_value{
+    font-size: 14px;
+}
+.header_right{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header_left{
+    width: 70%;
+}
+.head_left_item{
+    color:#8c74fc ;
+    font-size: 14px;
+}
+.content{
+    padding: 30rpx 10rpx 30rpx 60rpx;
+    margin-top: 15rpx;
+    background-color: #ffffff;
+}
+.picker{
+  display: flex;
+    justify-content: space-around;
+
+}
+.content_header{
+}
+.content_item{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #dedde2;
+    height: 80rpx;
+
+}
+.item_signer{
+    font-size: 14px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #3c3c3c;
+}
+.item_signer_text{
+    font-size: 14px;
+    margin-left: 50rpx;
+}
+.sub_params{
+    padding: 15rpx;
+    background-color: #f3f2fa;
+    min-height: 400rpx;
+}
+.content_bottom{
+    /*padding: 30rpx 60rpx 30rpx 60rpx;*/
+    margin-top: 100rpx;
+}
+.bottom_right_message{
+    text-align: right;
+    color: #d0d0cf;
+}
+.textHolder{
+    font-size: 14px;
+    color: #d0d0cf;
+    margin-top: 50rpx ;
+    margin-left: 50rpx;
+}
+.sub_img{
+
+}
+.uploadSty{
+    width: 50px;
+    height: 50px;
+}
+

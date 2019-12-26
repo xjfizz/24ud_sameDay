@@ -1,0 +1,25 @@
+/* components/bottom_no_message.wxss */
+.tip_main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100rpx;
+}
+.tip_left_line{
+  width: 150rpx;
+  height: 3rpx;
+  background-color: #8c74fc;
+}
+.tip_middle_value{
+  font-size: 14px;
+  color: #8c74fc;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 0 20rpx 0 20rpx;
+}
+.tip_right_line{
+  width: 150rpx;
+  height: 3rpx;
+  background-color: #8c74fc;
+}

@@ -1,0 +1,79 @@
+<!--pages/orderDetail/orderDetail.wxml-->
+<view class="main">
+  <view class="header">
+  <view class="header_item">
+     <view class="header_item_title">运单号:</view><view class="header_item_value">W0001</view>
+  </view>
+  <view class="header_item">
+     <view class="header_item_title">下单时间:</view><view class="header_item_value">2019.09.23 09:50:30</view>
+  </view>
+  </view>
+  <view class="content">
+    <view class="content_top">
+        <view class="content_title title">寄件信息:</view>
+        <view class="content_body">
+            <view class="content_left">
+                <image class="img_mini" src="../../images/home/icon/received/xiangqing-ji@2x.png"></image>
+            </view>
+            <view class="content_right name">
+                <view class="content_name">
+                    <view>李奇峰</view>
+                    <view>151****6869</view>
+                </view>
+                <view class="content_address">
+                    苏州工业园区国际科技园
+                </view>
+            </view>
+        </view>
+        <view class="content_body">
+            <view class="content_left">
+                <image class="img_mini" src="../../images/home/icon/received/shou@2x.png"></image>
+            </view>
+            <view class="content_right name">
+                <view class="content_name">
+                    <view>李奇峰</view>
+                    <view>151****6869</view>
+                </view>
+                <view class="content_address">
+                    苏州工业园区国际科技园
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="content_border"></view>
+    <view class="content_bottom">
+        <view class="content_title title">运单信息:</view>
+        <view class="content_bottom_item">
+            <view class="content_body_title">物品信息:</view>
+            <view class="content_body_value">文件</view>
+        </view>
+        <view class="content_bottom_item">
+            <view class="content_body_title">付款形式:</view>
+            <view class="content_body_value">寄付</view>
+        </view>
+        <view class="content_bottom_item">
+            <view class="content_body_title">订单备注:</view>
+            <view class="content_body_value">需要包装袋</view>
+        </view>
+        <view class="content_bottom_item">
+            <view class="content_body_title">全程路程:</view>
+            <view class="content_body_value">5公里</view>
+        </view>
+        <view class="content_bottom_item">
+            <view class="content_body_title">全程耗时:</view>
+            <view class="content_body_value">1小时30分</view>
+        </view>
+        <view class="content_bottom_item">
+            <view class="content_body_title">货物重量:</view>
+            <view class="content_body_value">0.5千克</view>
+        </view>
+        <view class="content_bottom_item">
+            <view class="content_body_title">实际收入:</view>
+            <view class="content_body_value">￥88元</view>
+        </view>
+     </view>
+  </view>
+  <view class="bottom">
+    <bottomTip></bottomTip>
+  </view>
+</view>

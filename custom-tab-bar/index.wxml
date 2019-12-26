@@ -1,0 +1,25 @@
+<import src="/pages/scanModal/scanModal.wxml" />
+
+
+<cover-view class="tab-bar">
+  <cover-view class="tab-bar-border" ></cover-view>
+  <cover-image bindtap="startScanner" data-item="{{sannerState}}" class="img-sty" src="../images/tabBar/scanning-group@2x.png"></cover-image>
+  <cover-view wx:for="{{list}}" wx:key="index" class="tab-bar-item" data-path="{{item.pagePath}}" data-index="{{index}}" bindtap="switchTab">
+    <cover-image  src="{{selected === index ? item.selectedIconPath : item.iconPath}}"></cover-image>
+    <cover-view style="color: {{selected === index ? selectedColor : color}}">{{item.text}}</cover-view>
+  </cover-view>
+</cover-view>
+<template is="addtell" data="{{scanModal}}" />
+
+<!--  <cover-image bindtap="startScanner" data-item="{{sannerState}}" class="img-sty" src="../images/tabBar/scanning-group@2x.png"></cover-image>-->
+
+<!--<cover-view class="menu_right">-->
+<!--  &lt;!&ndash; 右边 &ndash;&gt;-->
+<!--  <cover-view wx:for="{{list_right}}" wx:key="index" class="tab-bar-item" data-path="{{item.pagePath}}" data-index="{{index}}" bindtap="switchTab">-->
+<!--    <cover-image  src="{{selected === index ? item.selectedIconPath : item.iconPath}}"></cover-image>-->
+<!--    <cover-view style="color: {{selected === index ? selectedColor : color}}">{{item.text}}</cover-view>-->
+<!--  </cover-view>-->
+
+<!--</cover-view>-->
+
+

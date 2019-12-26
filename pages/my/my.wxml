@@ -1,0 +1,4 @@
+<!--pages/my/my.wxml-->
+<text>pages/my/my.wxml</text>
+<!--<image bindtap="startScanner" data-item="{{sannerState}}" class="img-sty" src="../../images/tabBar/scanning-group@2x.png"></image>-->
+

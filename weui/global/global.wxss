@@ -1,0 +1,22 @@
+.margin-top-sty50{
+    margin-top: 50rpx;
+}
+.margin-left-sty50{
+    margin-left: 50rpx;
+}
+.margin-left-sty40{
+    margin-left: 40rpx;
+}
+.title{
+    font-size: 14px;
+    font-weight: 700;
+    color: #3c3c3c;
+}
+.name{
+    font-size: 12px;
+    color: #aeaeae;
+}
+.img_mini{
+    width:45rpx;
+    height:45rpx ;
+}

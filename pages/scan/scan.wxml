@@ -1,0 +1,37 @@
+<view class="main">
+  <view class="scan_input">
+      <view class="input_left">
+          <input class="input" placeholder="请手动输入运单号" placeholder-class="input_sty"  
+          name="search" bindconfirm='search_function' type='text' confirm-type='确定' value='{{input_value}}' ></input>
+      </view>
+      <view class="input_right" bindtap="scan">
+          <image class="scan_image" src="../../images/home/scan/scanning-group@2x.png"></image>
+      </view>
+  </view>
+    <!-- 扫描列表 -->
+    <view class="order_list" wx:if="{{subList.length == 0}}">
+        <view class="order_title">
+            <view>全部订单:</view>
+            <view>共{{orderList.length || 0}}单</view>
+        </view>
+      <view class="list_item"  wx:for="{{orderList}}" wx:key="{{index}}">
+        <text class="list_item_title">{{item.id}}</text>
+        <text class="list_item_state">{{item.stateText}}</text>
+        <image class="list_item_del" src="../../images/home/scan/del@2x.png" bindtap="delOrder" data-item="{{item}}"></image>
+      </view>
+    </view>
+    <!-- 提交反馈 -->
+     <view class="order_list_result" wx:if="{{subList.length > 0}}">
+         <view class="order_title">
+             <view>提交结果:</view>
+             <view>共{{subList.length || 0}}单</view>
+         </view>
+      <view class="list_item_result"  wx:for="{{subList}}" wx:key="{{index}}">
+        <text class="list_item_title_result">{{item.id}}</text>
+        <text class="list_item_state_result">{{item.stateText}}</text>
+       </view>
+    </view>
+    <view class="submit">
+            <view wx:if="{{orderList.length > 0}}" class="submit_button" bindtap="submit">确认</view>
+    </view>
+</view>

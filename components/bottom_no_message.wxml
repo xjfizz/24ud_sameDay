@@ -1,0 +1,6 @@
+<!--components/bottom_no_message.wxml-->
+<view class="tip_main">
+  <view class="tip_left_line"></view>
+  <view class="tip_middle_value">我是有底线的</view>
+  <view class="tip_right_line"></view>
+</view>

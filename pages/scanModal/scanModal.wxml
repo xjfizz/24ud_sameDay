@@ -1,0 +1,11 @@
+<template name="addtell">
+    <view>
+        <view class="scanner-menu"  wx:if="{{!scanModal}}">
+            <image class="scanner-menu-img1"src="../images/tabBar/scanner/fajian@2x.png"    data-item="4" bindtap="goScanPage"></image>
+            <image class="scanner-menu-img2"src="../images/tabBar/scanner/shoujian@2x.png"  data-item="3" bindtap="goScanPage"></image>
+            <image class="scanner-menu-img3"src="../images/tabBar/scanner/lingjian@2x.png"  data-item="8" bindtap="goScanPage"></image>
+            <image class="scanner-menu-img4"src="../images/tabBar/scanner/qianshou@2x.png"  data-item="9" bindtap="goScanPage"></image>
+            <image class="scanner-menu-img5"src="../images/tabBar/scanner/wentijian@2x.png" data-item="10" bindtap="goScanPage"></image>
+        </view>
+    </view>
+</template>
